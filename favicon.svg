@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="#C6A467">
+    <!-- Background Distant Canopy -->
+    <path d="M12 48 L16 38 L20 40 L24 32 L28 36 L34 26 L40 34 L46 30 L50 38 L54 48 Z" fill-opacity="0.45"/>
+    <!-- Foreground Dense Canopy Trees -->
+    <!-- Tree 1 (Left Palm/Fern) -->
+    <path d="M14 52 L15 36 L8 30 L10 29 L16 34 L22 28 L23 29 L17 36 L16 52 Z"/>
+    <ellipse cx="14" cy="27" rx="7" ry="2.5"/>
+    <!-- Center Giant Canopy Tree -->
+    <path d="M30 52 L31 34 L24 24 L25 23 L32 30 L40 22 L41 23 L34 34 L33 52 Z"/>
+    <ellipse cx="32" cy="18" rx="12" ry="4.5"/>
+    <ellipse cx="24" cy="23" rx="8" ry="3.5"/>
+    <ellipse cx="40" cy="22" rx="9" ry="3.5"/>
+    <!-- Tree 3 (Right) -->
+    <path d="M48 52 L49 38 L43 32 L44 31 L50 36 L55 30 L56 31 L51 38 L50 52 Z"/>
+    <ellipse cx="49" cy="28" rx="7" ry="2.5"/>
+    <!-- Jungle Base Groundline -->
+    <path d="M4 52 Q32 49 60 52 L60 55 L4 55 Z"/>
+  </g>
+</svg>
