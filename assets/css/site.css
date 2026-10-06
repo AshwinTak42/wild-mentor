@@ -233,3 +233,30 @@ footer .inner{display:flex;justify-content:space-between;gap:10px 30px;flex-wrap
 @media(max-width:900px){.xp,.expgrid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
 @media(max-width:860px){.jh{grid-template-columns:1fr}.jh-ph{order:-1;aspect-ratio:4/3;min-height:0}}
 @media(max-width:560px){.xp,.expgrid{grid-template-columns:1fr}}
+
+/* ---- guide + promo ---- */
+.promo{padding-block:2.5rem}
+.pbox{display:flex;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap;background:var(--gold);color:#fff;border-radius:1.25rem;padding:clamp(24px,4vw,44px)}
+.pbox h2{color:#fff;font-size:clamp(26px,3.4vw,40px);text-transform:uppercase;letter-spacing:.02em}
+.pbox p{max-width:36rem;margin-top:8px;color:#fff;opacity:.93}
+.pbox .btn{background:var(--forest)}.pbox .btn:hover{background:var(--ink)}
+.guide{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.toc{position:sticky;top:96px;font-size:14px}.toc b{font:500 18px var(--display);color:var(--ink)}
+.toc ol{margin:12px 0 0;padding-left:18px;display:grid;gap:8px}.toc a{text-decoration:none;color:var(--mid)}.toc a:hover{color:var(--gold)}
+.prose{max-width:46rem}.prose h2{font-size:clamp(26px,3vw,34px);margin:2.6rem 0 .8rem;scroll-margin-top:96px}.prose h2:first-child{margin-top:0}
+.prose p,.prose ul{margin:0 0 1em}.prose ul{padding-left:1.2rem}.prose li{margin-bottom:.4em}
+.lead{font:400 clamp(19px,2.2vw,22px)/1.6 var(--display);color:var(--ink)}
+.tw{overflow-x:auto}.cmp{width:100%;border-collapse:collapse;font-size:15px;margin:1rem 0}
+.cmp th,.cmp td{border:1px solid var(--hair);padding:12px 14px;text-align:left;vertical-align:top}.cmp th{background:var(--tint);font:500 16px var(--display);color:var(--ink)}
+.day{background:var(--card);border:1px solid var(--hair);border-radius:1rem;padding:18px 22px;margin:0 0 14px}.day h3{font-size:20px;margin-bottom:6px}.day p{margin:0}
+.callout{background:var(--tint);border:1px solid var(--tintb);border-radius:1rem;padding:18px 22px;margin:1.4rem 0}
+@media(max-width:900px){.guide{grid-template-columns:1fr}.toc{position:static}}
+
+/* ---- galleries ---- */
+.gal{columns:3 260px;column-gap:14px;margin:18px 0 8px}.gal.two{columns:2 300px}
+.gal figure{margin:0 0 14px;break-inside:avoid}.gal img{border-radius:12px;height:auto}
+.gal figcaption{font-size:13px;color:var(--mid);margin-top:6px}
+.copy h3{font-size:24px;margin:2rem 0 .4rem}
+
+.arch.mix{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:3px}.arch.mix img:first-child{grid-row:1/3}
+.tc:hover .arch.mix img{transform:none}
