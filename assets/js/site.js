@@ -19,3 +19,5 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
   function q(){if(!tick)tick=requestAnimationFrame(upd)}
   addEventListener('scroll',q,{passive:true});addEventListener('resize',build);addEventListener('load',build);build();
 })();
+
+(function(){var s=document.getElementById('gscroll');if(!s)return;[].forEach.call(document.querySelectorAll('.gnav'),function(b){b.addEventListener('click',function(){s.scrollBy({left:(b.classList.contains('next')?1:-1)*s.clientWidth*.8,behavior:'smooth'})})})})();
