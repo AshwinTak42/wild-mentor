@@ -7,7 +7,7 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 (function(){
   var bar=document.getElementById('trail'),drive=document.querySelector('.drive');if(!bar)return;
   var hill=bar.querySelector('.hill'),sv=bar.querySelector('svg.h'),fl=sv.querySelector('.fl'),ln=sv.querySelector('.ln'),car=bar.querySelector('.mini');
-  var mw=[].slice.call(bar.querySelectorAll('.mw')),cx=[24,72],H=34,W=0,cw=68,tick=0;
+  var mw=[].slice.call(bar.querySelectorAll('.mw')),cx=[24,72],H=26,W=0,cw=68,tick=0;
   function sy(x){return H-(7+4.5*Math.sin(x/W*14.4+.6)+2.5*Math.sin(x/W*32))}
   function build(){W=hill.clientWidth||innerWidth;sv.setAttribute('viewBox','0 0 '+W+' '+H);var d='';for(var x=0;x<=W+8;x+=8){var X=Math.min(x,W);d+=(x?'L':'M')+X.toFixed(1)+','+sy(X).toFixed(1)}ln.setAttribute('d',d);fl.setAttribute('d',d+'L'+W+','+(H+4)+'L0,'+(H+4)+'Z');cw=car.getBoundingClientRect().width||68;upd()}
   function upd(){tick=0;
@@ -47,3 +47,5 @@ document.addEventListener('keydown',function(e){if(box&&box.classList.contains('
 (function(){function play(b){if(!b||!b.getAttribute('data-yt'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0&playsinline=1';f.title=b.getAttribute('data-title')||'Video';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.setAttribute('allowfullscreen','');f.referrerPolicy='strict-origin-when-cross-origin';b.replaceChildren(f);b.classList.add('playing');b.removeAttribute('data-yt');b.removeAttribute('role');b.removeAttribute('tabindex')}
 document.addEventListener('click',function(e){play(e.target.closest&&e.target.closest('.vid[data-yt]'))});
 document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.vid[data-yt]')){e.preventDefault();play(e.target)}})})();
+
+(function(){var h=document.querySelector('header');if(!h)return;var t=0;function f(){t=0;h.classList.toggle('scrolled',(window.pageYOffset||0)>16)}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(f)},{passive:true});f()})();
