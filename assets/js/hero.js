@@ -8,8 +8,8 @@
   var wheels=[document.getElementById('gyWR'),document.getElementById('gyWF')];
   var blurs=stage.querySelectorAll('.wb'), details=stage.querySelectorAll('.wd');
   var layers=[].map.call(stage.querySelectorAll('.lay'),function(el){return{el:el,f:parseFloat(el.getAttribute('data-f')),tile:1}});
-  var W=1,carW=1,rWheel=50,range=1,top0=0,IDLE=reduce?0:130,K=4.5;
-  var t=0,sm=0,D=0,prevD=0,v=0,last=0,raf=0;
+  var W=1,carW=1,rWheel=50,range=1,top0=0,IDLE=reduce?0:160,K=4.5;
+  var t=0,sm=0,D=0,prevD=0,v=0,last=0,raf=0,_ma=-99,_ds="",_bs="";
   function clamp(x,a,b){return x<a?a:x>b?b:x}
 
   function measure(){
@@ -39,15 +39,15 @@
     var a=(D/rWheel*57.29578)%360;
     wheels.forEach(function(w){w.setAttribute('transform','rotate('+a.toFixed(2)+')')});
     var bl=clamp((v-650)/1500,0,.78);
-    for(var i=0;i<blurs.length;i++){blurs[i].style.opacity=bl.toFixed(2);details[i].style.opacity=(1-bl*.75).toFixed(2)}
+    var bs=bl.toFixed(2);if(bs!==_bs){_bs=bs;for(var i=0;i<blurs.length;i++){blurs[i].style.opacity=bs;details[i].style.opacity=(1-bl*.75).toFixed(2)}}
     var amp=clamp(v/1200,0,1);
     var bob=Math.sin(t*9)*(.5+amp*2.3)+Math.sin(t*5.3+1)*(.3+amp*1.2);
     var pitch=Math.sin(t*6.2+.7)*(.12+amp*.7);
     bodyG.setAttribute('transform','translate(0 '+bob.toFixed(2)+') rotate('+pitch.toFixed(2)+' 372 262)');
     driverG.setAttribute('transform','translate(0 '+(-bob*.35).toFixed(2)+')');
     camG.setAttribute('transform','translate(0 '+(-bob*.2+Math.sin(t*3.1)*.5).toFixed(2)+')');
-    dust.setAttribute('opacity',clamp((v-140)/800,0,.9).toFixed(2));
-    mand.style.transform='rotate('+(D*.012).toFixed(2)+'deg)';
+    var ds=clamp((v-140)/800,0,.9).toFixed(2);if(ds!==_ds){_ds=ds;dust.setAttribute('opacity',ds)}
+    
   }
 
   function frame(now){
