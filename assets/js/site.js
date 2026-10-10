@@ -47,9 +47,3 @@ document.addEventListener('keydown',function(e){if(box&&box.classList.contains('
 (function(){function play(b){if(!b||!b.getAttribute('data-yt'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0&playsinline=1';f.title=b.getAttribute('data-title')||'Video';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.setAttribute('allowfullscreen','');f.referrerPolicy='strict-origin-when-cross-origin';b.replaceChildren(f);b.classList.add('playing');b.removeAttribute('data-yt');b.removeAttribute('role');b.removeAttribute('tabindex')}
 document.addEventListener('click',function(e){play(e.target.closest&&e.target.closest('.vid[data-yt]'))});
 document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.vid[data-yt]')){e.preventDefault();play(e.target)}})})();
-
-(function(){var h=document.querySelector('header');if(!h)return;var t=0,MX=1;
-function m(){MX=Math.max(1,document.documentElement.scrollHeight-innerHeight)}
-function f(){t=0;var y=window.pageYOffset||0;h.classList.toggle('scrolled',y>16);h.style.setProperty('--p',Math.min(1,y/MX).toFixed(4))}
-addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(f)},{passive:true});addEventListener('resize',function(){m();f()});addEventListener('load',function(){m();f()});
-if(window.ResizeObserver)new ResizeObserver(m).observe(document.body);m();f()})();

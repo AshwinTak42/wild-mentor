@@ -47,7 +47,7 @@
     driverG.setAttribute('transform','translate(0 '+(-bob*.35).toFixed(2)+')');
     camG.setAttribute('transform','translate(0 '+(-bob*.2+Math.sin(t*3.1)*.5).toFixed(2)+')');
     var ds=clamp((v-140)/800,0,.9).toFixed(2);if(ds!==_ds){_ds=ds;dust.setAttribute('opacity',ds)}
-    
+    mand.style.transform='rotate('+(D*.012).toFixed(2)+'deg)';
   }
 
   function frame(now){
